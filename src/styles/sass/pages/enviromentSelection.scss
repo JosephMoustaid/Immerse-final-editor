@@ -1,0 +1,31 @@
+.environment-selection-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .environment-options {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .environment-option {
+    width: 150px;
+    height: 150px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+  }
+  
+  .environment-option.selected {
+    border-color: blue;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
