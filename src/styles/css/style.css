@@ -167,6 +167,7 @@ button, input[type=button], input[type=submit] {
 .environment-option {
   width: 150px;
   height: 150px;
+  margin: 10px;
   background-color: lightgray;
   display: flex;
   justify-content: center;
