@@ -1,7 +1,7 @@
  $primary:#DC28E4;
 
-
- @import './components/asideNav.scss';
- @import './pages/enviromentSelection.scss';
- @import './pages/editor.scss';
- @import '../../../../node_modules/bootstrap/scss/bootstrap.scss';
+ @import './components/asideNav'; // No need for .scss extension
+ @import './pages/enviromentSelection'; // No need for .scss extension
+ @import './pages/editor'; // No need for .scss extension
+ @import '../../../node_modules/bootstrap/scss/bootstrap'; // Use tilde (~) to reference node_modules
+ 

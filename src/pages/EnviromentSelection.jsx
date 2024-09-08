@@ -8,17 +8,8 @@ function EnvironmentSelection() {
 
   // Define available environments
   const environments = [
-    { id: 'forest', name: 'Forest', preset: 'forest' },
-    { id: 'starry', name: 'Starry Night', preset: 'starry' },
-    { id: 'yavapai', name: 'Yavapai', preset: 'yavapai' },
-    { id: 'volcano', name: 'Volcano', preset: 'volcano' },
-    { id: 'threetowers', name: 'Three Towers', preset: 'threetowers' },
-    { id: 'contact', name: 'Contact', preset: 'contact' },
-    { id: 'tron', name: 'Tron', preset: 'tron' },
-    { id: 'arches', name: 'Arches', preset: 'arches' },
-    { id: 'dream', name: 'Dream', preset: 'dream' },
-    { id: 'poison', name: 'Poison', preset: 'poison' },
-    { id: 'japan', name: 'Japan', preset: 'japan' },
+    { id: 'itLab', name: 'IT Lab', preset: 'itLab' },
+    { id: 'universityHall', name: 'University Hall', preset: 'universityHall' },
   ];
 
   const handleEnvSelect = (env) => {
@@ -42,7 +33,7 @@ function EnvironmentSelection() {
         {environments.map((env) => (
           <div
             key={env.id}
-            className={`environment-option ${selectedEnv?.id === env.id ? 'selected' : ''}`}
+            className={`environment-option ${"itLab" === env.id ? 'lab' : 'school'} ${selectedEnv?.id === env.id ? 'selected' : ''}`}
             onClick={() => handleEnvSelect(env)}
           >
             {env.name}

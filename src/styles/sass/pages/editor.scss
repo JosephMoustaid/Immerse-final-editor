@@ -1,15 +1,25 @@
-#model{
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.5);
-    position: absolute;
-    z-index: 9999;
-    overflow: hidden;
-  }
+#model {
+  top: 0;
+  
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
   #info{
     position: relative;
     width:50%;
-    margin: 15% auto 0 auto;
+    @media (max-width:768px) {
+      width: 90%;
+    }
+    
+    margin: auto;
     background: rgba(0,0,0,0.5);
     padding: 1%;
     color: white;
