@@ -30,7 +30,7 @@ function DeskEntity({ position = "0 0 0", rotation = "0 0 0" }) {
             ></a-gltf-model>
             <a-gltf-model 
                 src={officeChair} 
-                position="0 4 2" 
+                position="0 3.2 2" 
                 rotation="0 180 0"
                 scale="6 6 6"
             ></a-gltf-model>

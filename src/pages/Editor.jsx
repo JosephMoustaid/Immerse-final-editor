@@ -6,6 +6,9 @@ import { FaRegFilePdf } from 'react-icons/fa';
 import { CiVideoOn } from 'react-icons/ci';
 import { TbArrowsMove } from 'react-icons/tb';
 
+import { selectObject, modifyObjectWithKeys } from '../components/ObjectManipulation'; // Import functions
+
+
 import PdfViewer from '../components/PDFViewer';
 import VideoViewer from '../components/VideoViewer';
 import ItLabScene from '../environments/Lab/LabScene';
@@ -18,8 +21,11 @@ import PDF from '../assets/pdf/Rapport.pdf';
 import wallTexture from "./../assets/textures/blueWall2.jpg";
 import floorTexture from "./../assets/textures/floor6.jpg";
 import ceilingTexture from "./../assets/textures/ceilingLamps.jpg";
-
+import woodTexture from "./../assets/textures/wood5.webp"
 import Nav from "../components/Nav.jsx"
+import LabScene from '../environments/Lab/LabScene';
+
+import maleAvatarModel from "./../assets/avatars/maleStudent.glb";
 
 const Editor = () => {
   const openSideNav = () => {
@@ -84,13 +90,34 @@ const Editor = () => {
           <a-asset-item id="video" src={Video}></a-asset-item>
           <a-asset-item id="pdf" src={PDF}></a-asset-item>
 
+
+          <img id="WoodTexture" src={woodTexture} />
           <img id="wallTexture" src={wallTexture} alt="Wall Texture" />
           <img id="ceilingTexture" src={ceilingTexture} alt="Ceiling Texture" />
         </a-assets>
+          <a-entity
+            id="camera"
+            camera
+            look-controls
+            my-custom-look-controls
+            camera-collider="speed: 0.2; radius: 0.5"
+            ref={cameraRef}
+            rotation="0 0 0"
+            position="0 3 0"
+          >
+            <a-cursor></a-cursor>
+          </a-entity>
+
+
+        {video.visible && <VideoViewer position="0 0 -17" rotation="0 -90 0" scale="5 5 5" />}
+
+        <a-box color="green" height="100" width="100" scale="5 5 5" ></a-box>
+        <a-plane color="blue" width="100" height="100"></a-plane>
+
+        { environment === 'itLab' && <ItLabScene cameraRef={cameraRef} videoVisible={video.visible} pdfVisible={pdf.visible} /> }
+        { environment === 'universityHall' && <SchoolHallScene cameraRef={cameraRef} videoVisible={video.visible} pdfVisible={pdf.visible} />}
         
-        {video.visible && <VideoViewer position="39 11 -17" rotation="0 -90 0" scale="5 5 5" />}
-        {environment === 'itLab' && <ItLabScene />}
-        {environment === 'universityHall' && <SchoolHallScene />}
+
         
         {assets.map((asset) => asset.visible && (
           <a-gltf-model
@@ -104,7 +131,9 @@ const Editor = () => {
           ></a-gltf-model>
         ))}
         
-        {pdf.visible && <PdfViewer pdf={PDF} scale={1} rotation="0 0 0" class="selectable" position="10 5 0" />}
+
+        
+        {pdf.visible && <PdfViewer pdf={PDF} scale={10} rotation="0 0 0" class="selectable" position="10 5 0" />}
         
         {showModel && (  // Conditionally render the model section based on the state
           <div id="model">

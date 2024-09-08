@@ -7,7 +7,7 @@ import ceilingTexture from "../../assets/textures/ceilingLamps.jpg";
 import DeskEntity from '../../EnvironmentComponents/DeskEntity.jsx';
 import SharedDesk from '../../EnvironmentComponents/SharedDesk.jsx';
 import DoubleDoor from "../../assets/3D_Components/double_door_692.glb";
-import WindowBlind from "../../assets/3D_Components/not_see_through_window.glb";
+import WindowBlind from "../../assets/3D_Components/window.glb";
 import teacherDesk from "../../assets/3D_Components/teacher_desk.glb";
 import ProjectorScreen from "../../assets/3D_Components/projector_screen.glb"; 
 import Projector from "../../assets/3D_Components/projector.glb"; 
@@ -31,7 +31,6 @@ function StaticElements(){
                 height="80" 
                 material={`src: url(${floorTexture}); repeat: 6 6`}  
                 src={floorTexture}
-                static-body
             />
 
             {/* Walls */}
@@ -43,7 +42,8 @@ function StaticElements(){
                 depth="0.1" 
                 material={`src: url(${wallTexture}); repeat: 4 2`}  
                 src={wallTexture}
-                static-body
+                class="collidable "
+
             />
 
             <a-box 
@@ -55,7 +55,7 @@ function StaticElements(){
                 material={`src: url(${wallTexture}); repeat: 4 2`}  
                 src={wallTexture}
                 repeat="4 2"
-                static-body
+                class="collidable "
             />
 
             <a-box 
@@ -66,7 +66,7 @@ function StaticElements(){
                 depth="0.1" 
                 material={`src: url(${wallTexture}); repeat: 4 2`}  
                 src={wallTexture}
-                static-body
+                class="collidable "
             />
 
             <a-box 
@@ -77,7 +77,7 @@ function StaticElements(){
                 depth="0.1" 
                 material={`src: url(${wallTexture});repeat: 4 2`}  
                 src={wallTexture}
-                static-body
+                class="collidable "
             />
 
             {/* Ceiling */}
@@ -88,7 +88,6 @@ function StaticElements(){
                 height="80" 
                 material={`src: url(${ceilingTexture}); repeat: 2 3`}  
                 src={ceilingTexture}
-                static-body
             />
 
             {/* Other static elements */}
@@ -105,6 +104,14 @@ function StaticElements(){
                 <DeskEntity position="0 0 -36" rotation="0 0 0"/>
                 <DeskEntity position="12 0 -36" rotation="0 0 0"/>
                 <DeskEntity position="24 0 -36" rotation="0 0 0"/>
+            </a-entity>
+
+            <a-entity>
+                <DeskEntity position="-24 0 36" rotation="0 180 0"/>
+                <DeskEntity position="-12 0 36" rotation="0 180 0"/>
+                <DeskEntity position="0 0 36" rotation="0 180 0"/>
+                <DeskEntity position="12 0 36" rotation="0 180 0"/>
+                <DeskEntity position="24 0 36" rotation="0 180 0"/>
             </a-entity>
 
             <a-gltf-model 
@@ -124,21 +131,42 @@ function StaticElements(){
             <a-entity>
                 <a-gltf-model 
                     src={WindowBlind} 
-                    position="-18 8 39.7" 
+                    position="-18 8 39.5" 
                     scale="2 2 2"
                     rotation="0 0 0"
                 ></a-gltf-model>
                 <a-gltf-model 
                     src={WindowBlind} 
-                    position="0 8 39.7" 
+                    position="0 8 39.5" 
                     scale="2 2 2"
                     rotation="0 0 0"
                 ></a-gltf-model>
                 <a-gltf-model 
                     src={WindowBlind} 
-                    position="18 8 39.7" 
+                    position="18 8 39.5" 
                     scale="2 2 2"
                     rotation="0 0 0"
+                ></a-gltf-model>
+            </a-entity>
+
+            <a-entity>
+                <a-gltf-model 
+                    src={WindowBlind} 
+                    position="-18 8 -39.5" 
+                    scale="2 2 2"
+                    rotation="0 180 0"
+                ></a-gltf-model>
+                <a-gltf-model 
+                    src={WindowBlind} 
+                    position="0 8 -39.5" 
+                    scale="2 2 2"
+                    rotation="0 180 0"
+                ></a-gltf-model>
+                <a-gltf-model 
+                    src={WindowBlind} 
+                    position="18 8 -39.5" 
+                    scale="2 2 2"
+                    rotation="0 180 0"
                 ></a-gltf-model>
             </a-entity>
 
@@ -209,10 +237,16 @@ function StaticElements(){
                 ></a-gltf-model>
                 <a-gltf-model 
                     src={arduinoProject1} 
-                    position="33 6.5 -38" 
+                    position="33 6.9 -38" 
                     scale=".5 .5 .5"
                     rotation="0 0 0"
                     grabbable
+                ></a-gltf-model>
+                 <a-gltf-model 
+                    src={deskShelf} 
+                    position="34.5 8 -38.7" 
+                    scale="13 13 8"
+                    rotation="0 -90 0"
                 ></a-gltf-model>
                 <a-gltf-model 
                     src={motor1} 

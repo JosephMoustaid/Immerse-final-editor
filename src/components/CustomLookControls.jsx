@@ -186,4 +186,3 @@ AFRAME.registerComponent('camera-collider', {
     this.removeEventListeners();
   }
 });
-  

@@ -85,7 +85,7 @@ function SharedDesk({ position = "0 0 0", rotation = "0 0 0" }) {
                 ></a-gltf-model>
                 <a-gltf-model 
                     src={officeChair} 
-                    position="-5 4 15" 
+                    position="-5 3.5 15" 
                     scale="6.5 6.5 6.5"
                     rotation="0 90 0"
                 ></a-gltf-model> 
@@ -129,14 +129,14 @@ function SharedDesk({ position = "0 0 0", rotation = "0 0 0" }) {
                 ></a-gltf-model> 
                 <a-gltf-model 
                     src={officeChair} 
-                    position="-5 4 4" 
+                    position="-5 3.5 4" 
                     scale="6.5 6.5 6.5"
                     rotation="0 90 0"
                 ></a-gltf-model>  
 
                 <a-gltf-model 
                     src={officeChair} 
-                    position="-5 4 9.5" 
+                    position="-5 3.5 9.5" 
                     scale="6.5 6.5 6.5"
                     rotation="0 90 0"
                 ></a-gltf-model> 
@@ -182,7 +182,7 @@ function SharedDesk({ position = "0 0 0", rotation = "0 0 0" }) {
                 ></a-gltf-model>
                 <a-gltf-model 
                     src={officeChair} 
-                    position="-5 4 15" 
+                    position="-5 3.5 15" 
                     scale="6.5 6.5 6.5"
                     rotation="0 90 0"
                 ></a-gltf-model> 
@@ -226,14 +226,14 @@ function SharedDesk({ position = "0 0 0", rotation = "0 0 0" }) {
                 ></a-gltf-model> 
                 <a-gltf-model 
                     src={officeChair} 
-                    position="-5 4 4" 
+                    position="-5 3.5 4" 
                     scale="6.5 6.5 6.5"
                     rotation="0 90 0"
                 ></a-gltf-model>  
 
                 <a-gltf-model 
                     src={officeChair} 
-                    position="-5 4 9.5" 
+                    position="-5 3.5 9.5" 
                     scale="6.5 6.5 6.5"
                     rotation="0 90 0"
                 ></a-gltf-model> 

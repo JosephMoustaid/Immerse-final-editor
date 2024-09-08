@@ -12,9 +12,8 @@ import tofferLights from "../../assets/3D_Components/troffer_light_3d_model.glb"
 import maleAvatarModel from "../../assets/avatars/maleStudent.glb";
 
 
-function SchoolScene({ video  , pdf , assets}) {
+function SchoolScene({ video  , pdf , assets , cameraRef , videoVisible=true , pdfVisible=true }) {
 
-    const cameraRef = useRef(null);
 
     const lampPositions = [
         // First row
@@ -29,48 +28,20 @@ function SchoolScene({ video  , pdf , assets}) {
 
     return (
         <a-scene>
-            <a-assets>
-                <img id="CeilingTexture" src={ceilingTexture} />
-                <img id="WoodTexture" src={woodTexture} />
-                <a-asset-item id="my-avatar-model" src={maleAvatarModel}></a-asset-item>
-            </a-assets>
 
-            {/* Camera with collider */}
-            <a-camera
-            position="25 10 25"
-            rotation="0 0 0"
-            camera-colliderref={cameraRef}
-            camera-collider
-            ref={cameraRef} // Attach the ref here
-            >
-            </a-camera>
-
-            {/* Camera with avatar model as a child */}
-            <a-entity
-            id="rig"
-            height="10"
-            position="12 2 60"
-            rotation="0 180 0"
-            movement-controls
-            physics-debug
-            >
-            <a-camera
-                camera-collider
-                wasd-controls="acceleration: 200"
-                look-controls="pointerLockEnabled: true"
-                dynamic-body="mass: 2; linearDamping: 0.9; angularDamping: 0.9"
-                collision="shape: box"
-                ref={cameraRef} // Attach the ref here as well
-            >
-                <a-gltf-model
-                src={maleAvatarModel}
-                position="0 -5 6"
-                rotation="0 180 0"
-                scale="15 15 15"
-                />
-                <a-cursor color="#FF0000"></a-cursor>
-            </a-camera>
-            </a-entity>
+        {/* Camera */}
+        <a-entity
+          id="camera"
+          camera
+          look-controls
+          my-custom-look-controls
+          camera-collider="speed: 0.2; radius: 0.5"
+          ref={cameraRef}
+          rotation="0 0 0"
+          position="0 3 0"
+        >
+          <a-cursor></a-cursor>
+        </a-entity>
 
             {/* Scene setup */}
             <a-entity light="type: ambient; intensity: 0.7"></a-entity>

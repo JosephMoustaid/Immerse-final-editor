@@ -3,7 +3,8 @@ import LabScene from "./LabScene.jsx";
 import { useLocation } from "react-router-dom";
 //import pdfUrl from "../../assets/PDFs/rapport.pdf";
 
-function Lab({ video, pdf, assets = [], user}) {
+function Lab({ video, pdf, assets = [], user , cameraRef}) {
+    /*
     const [chat, setChat] = useState([
         { msg: "Oh yeah, Forgot you could do that. Im so dumb @streamer.", sender: { id: "chefFrank", firstname: "chef", lastname: "Frank" }, msgTime: "", msgDate: "" },
         { msg: "Uh... wrong franchise, yo. I mean there are leaves @streamer", sender: { id: "serioussloth", firstname: "serious", lastname: "sloth" }, msgTime: "", msgDate: "" },
@@ -15,13 +16,13 @@ function Lab({ video, pdf, assets = [], user}) {
         const colors = ['green', 'blue', 'purple', 'yellow', 'red'];
         return colors[index % colors.length];
     };
-
+    */
 
     const location = useLocation();
     const annotations = location.state?.annotations || []; // Access annotations from state
     return (
         <>
-            <LabScene video={video} pdf={pdf} assets={assets} annotations={annotations}  />
+            <LabScene video={video} pdf={pdf} assets={assets} annotations={annotations} cameraRef={cameraRef}  />
             {/*
             <div className='rounded assets'>
                 <ol>
